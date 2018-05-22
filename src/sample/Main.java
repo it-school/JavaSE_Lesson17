@@ -23,12 +23,10 @@ public class Main extends Application {
         stage = primaryStage;
         primaryStage.show();
 */
-
-        NumberAxis xAxis = new NumberAxis(0, 10, 1);
-        xAxis.setLabel("Area");
-
-        NumberAxis yAxis = new NumberAxis(-2, 100, 2);
-        yAxis.setLabel("Weight");
+        NumberAxis xAxis = new NumberAxis(-10, 10, 1);
+        xAxis.setLabel("X");
+        NumberAxis yAxis = new NumberAxis(0, 100, 10);
+        yAxis.setLabel("Y");
         ScatterChart<String, Number> scatter = new ScatterChart(xAxis, yAxis);
         scatter.getXAxis().setLabel("X");
         scatter.getYAxis().setLabel("Y");
@@ -39,7 +37,7 @@ public class Main extends Application {
 
         double a = 1, b = 2;
 
-        for (double x = -10; x<=10; x+=0.01)
+        for (double x = -10; x<=10; x+=0.5)
             series1.getData().add(new XYChart.Data(x, a*x*x+b));
 
         scatter.getData().add(series1);
